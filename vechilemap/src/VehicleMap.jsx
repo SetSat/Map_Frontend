@@ -17,7 +17,7 @@ const VehicleMap = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      fetch("http://localhost:4000/api/vehicle-location")
+      fetch("https://mapbackend-1rvx.onrender.com/api/vehicle-location")
         .then((res) => res.json())
         .then((data) => {
           const newLocation = [data.latitude, data.longitude];
@@ -27,7 +27,7 @@ const VehicleMap = () => {
         .catch((error) =>
           console.error("Error fetching vehicle location:", error)
         );
-    }, 2000);
+    }, 700);
 
     return () => clearInterval(interval);
   }, []);
