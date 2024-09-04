@@ -27,7 +27,7 @@ const VehicleMap = () => {
         .catch((error) =>
           console.error("Error fetching vehicle location:", error)
         );
-    }, 700);
+    }, 1000);
 
     return () => clearInterval(interval);
   }, []);
@@ -35,7 +35,7 @@ const VehicleMap = () => {
   return (
     <MapContainer
       center={vehicleLocation}
-      zoom={13}
+      zoom={15}
       style={{ height: "900px", width: "100%" }}
     >
       <TileLayer
